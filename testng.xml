@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.havasmedia.campaigntest.Hooks"/>
+      <class name="com.havasmedia.basetest.MainRunner"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
