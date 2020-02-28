@@ -23,7 +23,7 @@ public class Hooks extends BaseConfigurationSetup {
 	public static HwInit pageInit;
 	public static CampaignPage campaignPageObj;
 	
-	@Before("@test")
+	@Before("@BDDTEST-ZAP-7")
 	public void setUpInitObjects() throws Exception {
 		
 		driver = initWebBrowserDriver(configFileLoc.getProperty("CHROME"));

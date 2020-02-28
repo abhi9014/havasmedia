@@ -14,7 +14,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				monochrome = true, //display the console output in a proper readable format
 				strict = true, //it will check if any step is not defined in step definition file
 				dryRun = false,//to check the mapping is proper between feature file and step def file
-				tags= {"@test"}//"~@Ignore"   "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/report.html
+				tags= {"@BDDTEST-ZAP-7"}//"~@Ignore"   "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/report.html
 		)
 
 public class MainRunner extends AbstractTestNGCucumberTests{
