@@ -15,4 +15,4 @@ To Test Automation Execution with Stories Created in Zaphyr
 		
 		Examples:
 		|userName | password|
-		
+		|125927  | Achat9002*|
