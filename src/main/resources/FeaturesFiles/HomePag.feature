@@ -9,6 +9,6 @@ Then Verify the UserName in Homepage
 
 Examples:
 |userName | password|
-|125927  | Achat9002*|
+|****  | ******|
 
 
