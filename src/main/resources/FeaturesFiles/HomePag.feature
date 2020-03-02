@@ -16,5 +16,5 @@ Feature: Test Zaphyr Configuration
 				
 				Examples:
 				|userName | password|
-				|125927  | Achat9002*|
+				|testgenisysgroup@gmail.com  |test@1234|
 		

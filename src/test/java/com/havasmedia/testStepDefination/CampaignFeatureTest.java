@@ -23,8 +23,8 @@ public class CampaignFeatureTest extends BaseConfigurationSetup{
 	}
 	@Then("^Verify the UserName in Homepage$")
 	public void Verify_the_UserName_in_Homepage() throws Throwable {
-		String struserName=Hooks.campaignPageObj.getTextFromApplication().getText();
-		Assert.assertEquals(struserName, "Abhishek Chatterjee");
+		boolean imgDisplayed=Hooks.campaignPageObj.getTextFromApplication();System.out.println("Title Displayed "+imgDisplayed);
+		Assert.assertTrue(imgDisplayed,"Image not displayed : Login in Failed");
 	}
 
 }

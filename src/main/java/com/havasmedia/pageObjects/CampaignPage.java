@@ -3,6 +3,7 @@ package com.havasmedia.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 public class CampaignPage extends HwInit {
 	WebDriver driver;
@@ -11,36 +12,48 @@ public class CampaignPage extends HwInit {
 		this.driver=driver;
 	}
 
-	@FindBy(id="username")
+	
+	@FindBy(how=How.XPATH,using="//div[@class='makeFlex column flexOne whiteText latoBold']")
+	private WebElement wbToLoginBtn;
+	@FindBy(how=How.ID, using="username")
 	private WebElement wbUsernameTxt;
 	
-	@FindBy(id="password")
+	@FindBy(how=How.XPATH,using="//span[text()='Continue']/..")
+	private WebElement wbContinueBtn;
+		
+	@FindBy(how=How.ID, using="password")
 	private WebElement wbPasswordTxt;
 	
-	@FindBy(xpath="//button[contains(@class,' btn-primary ')]")
-	private WebElement wbSubmitBtn;
+	@FindBy(how=How.XPATH, using="//span[text()='Login']/..")
+	private WebElement wbLoginBtn;
 	
-	@FindBy(xpath="//*[@id='feedsUserPhoto']/following-sibling::div")
+	@FindBy(how =How.XPATH,using="//a[@class='mmtLogo makeFlex']")
 	private WebElement wbLoggedInUserTxt;
 	
 	
-	public WebElement getTextFromApplication() {
-		return wbLoggedInUserTxt;
+	public boolean getTextFromApplication() {
+		return wbLoggedInUserTxt.isDisplayed();
 		
 	}
 	public void enterCredentials(String userName,String password) {
 		try {
-			waitUntilElementVisible(wbSubmitBtn);
+			waitUntilElementVisible(wbToLoginBtn);
+			wbToLoginBtn.click();
+			waitUntilElementVisible(wbUsernameTxt);
 			wbUsernameTxt.sendKeys(userName);
+			waitUntilElementVisible(wbContinueBtn);
+			wbContinueBtn.click();
+			waitUntilElementVisible(wbPasswordTxt);
 			wbPasswordTxt.sendKeys(password);
 		} catch (Exception e) {
-		//	baseSetup.logger.error("Not Able to Login To App due to : \n", e.getMessage());
+			e.printStackTrace();
 		}
+		
 	}		
 		public void clickLoginButton(){
 			try {
-				wbSubmitBtn.click();
 				waitTillElementVisible(wbLoggedInUserTxt);
+				wbLoginBtn.click();
 			} catch (Exception e) {
 			e.printStackTrace();
 			
