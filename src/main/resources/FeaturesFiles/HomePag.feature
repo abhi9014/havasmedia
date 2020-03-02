@@ -1,14 +1,13 @@
-@BDDSTORY-ZAP-6
-Feature: CI Integration With Zaphyr and JIRA 
-To Test Automation Execution with Stories Created in Zaphyr
+@BDDSTORY-ZAP-10
+Feature: ToTestBDDWithZephyr
 
 
-	@BDDTEST-ZAP-7
+
+	@BDDTEST-ZAP-11
 	@BDDVER--1
-	@BDDCYC-b49c33ac-ac6a-4c1e-9c98-e518daa8b2bc
-	Scenario Outline: Simple Test Scenario
+	@BDDCYC-55d2b0dc-7590-4b67-a39e-ec7c9882282d
+	Scenario Outline: SimpleBddTest
 	
-		
 		Given user enters valid "<userName>" and "<password>"
 		And user clicks on LoginButton
 		Then Verify the UserName in Homepage
@@ -16,3 +15,4 @@ To Test Automation Execution with Stories Created in Zaphyr
 		Examples:
 		|userName | password|
 		|125927  | Achat9002*|
+
