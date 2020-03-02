@@ -1,18 +1,20 @@
-@BDDSTORY-ZAP-10
-Feature: ToTestBDDWithZephyr
+@BDDSTORY-TES-3
+Feature: Test Zaphyr Configuration
 
 
 
-	@BDDTEST-ZAP-11
+	@BDDTEST-TES-4
 	@BDDVER--1
-	@BDDCYC-55d2b0dc-7590-4b67-a39e-ec7c9882282d
-	Scenario Outline: SimpleBddTest
+	@BDDCYC-b62129c4-8999-4a89-8daa-86da6e789de9
+	Scenario Outline: TestAutomationExecution
 	
-		Given user enters valid "<userName>" and "<password>"
-		And user clicks on LoginButton
-		Then Verify the UserName in Homepage
 		
-		Examples:
-		|userName | password|
-		|125927  | Achat9002*|
-
+			
+				Given user enters valid "<userName>" and "<password>"
+				And user clicks on LoginButton
+				Then Verify the UserName in Homepage
+				
+				Examples:
+				|userName | password|
+				|125927  | Achat9002*|
+		

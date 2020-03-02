@@ -10,11 +10,11 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				features ="classpath:FeaturesFiles",
 				glue= {"com.havasmedia.campaigntest","com.havasmedia.testStepDefination"},
 				plugin = {"pretty",
-							"junit:test-results/TESTCucumber.xml"},
+							"junit:target/surefire-reports/TESTCucumber.xml"},
 				monochrome = true, //display the console output in a proper readable format
 				strict = true, //it will check if any step is not defined in step definition file
 				dryRun = false,//to check the mapping is proper between feature file and step def file
-				tags= {"@BDDTEST-ZAP-11"}//"~@Ignore"   "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/report.html
+				tags= {"@BDDTEST-TES-4"}//"~@Ignore"   "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/report.html
 		)
 
 public class MainRunner extends AbstractTestNGCucumberTests{
