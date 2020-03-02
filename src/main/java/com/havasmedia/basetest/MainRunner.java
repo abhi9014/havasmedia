@@ -9,7 +9,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
 				features ="classpath:FeaturesFiles",
 				glue= {"com.havasmedia.campaigntest","com.havasmedia.testStepDefination"},
-				plugin = {"pretty",
+				plugin = {"pretty","json:target/surefire-reports/CucumberTestReport.json",
 							"junit:target/surefire-reports/TESTCucumber.xml"},
 				monochrome = true, //display the console output in a proper readable format
 				strict = true, //it will check if any step is not defined in step definition file
