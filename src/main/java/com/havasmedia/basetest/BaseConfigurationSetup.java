@@ -7,15 +7,15 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+
 
 public class BaseConfigurationSetup{
 	public static Properties configFileLoc;
@@ -84,4 +84,19 @@ public class BaseConfigurationSetup{
 		} 
 		  
 	  } 
+	
+	public String gsonMap(HashMap<String, List<String>> mapp){
+		String JSONObject="";
+		try {
+			GsonBuilder gsonMapBuilder = new GsonBuilder();
+			 
+			Gson gsonObject = gsonMapBuilder.create();
+	 
+			 JSONObject = gsonObject.toJson(mapp);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return JSONObject;
+		
+	}
 	}
