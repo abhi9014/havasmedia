@@ -7,8 +7,10 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -99,4 +101,61 @@ public class BaseConfigurationSetup{
 		return JSONObject;
 		
 	}
+	
+	public  HashMap<String, List<String>> readData() throws FileNotFoundException {
+		File file = new File(CONFIG_PROPERTIES); 
+	    Scanner sc = new Scanner(file);
+	    HashMap<String, List<String>> hashMapTest = null;
+	    HashMap<String, Map<String, List<String>>> hashMapTest1 = null;
+	    HashMap<String, HashMap<String, List<String>>> map=null;
+	    while (sc.hasNextLine()) {
+	    	   String line = sc.nextLine();
+	    	   String getliststr = line.replaceAll("\\[\\[", "");
+	    	   String getfinallist = getliststr.replaceAll("\\]\\]", "");
+				  List<String> al = new ArrayList<String>(); 
+				  al = Arrays.asList(getfinallist); 	
+				 for(String s: al)
+				 { 
+					 if(s.contains("ORGANIZATION")) 
+					 {
+					  if(s.contains("DATE")) 
+					  {
+						  //System.out.println(al); 
+						  String str[] = al.toString().split("], \\["); 
+						  List<String> al1 = new ArrayList<String>(); 
+						  List<String> al2 = new ArrayList<String>(); 
+						  List<String> al3 = new ArrayList<String>(); 
+						  al1 = Arrays.asList(str);
+						  hashMapTest = new HashMap<String, List<String>>();
+						  map  = new HashMap<String, HashMap<String,List<String>>>();
+						  for(String s1: al1){
+				    			if(s1.contains("ORGANIZATION")) {
+				    				al2.add(s1.split(",")[0]);
+				    				hashMapTest.put(s1.split(",")[1],al2 );
+				    			}
+				    		   
+				    			if(s1.contains("DATE"))
+				    			{
+				    				al3.add(s1.split(",")[0]);
+				    				hashMapTest.put(s1.split(",")[1],al3 );
+				    			}
+				    		}
+						  System.out.println(hashMapTest);
+					  }
+					  }
+				 }
+				  
+				 
+	    	}
+		return hashMapTest; 
 	}
+	
+	public void getMapEnity() throws FileNotFoundException {
+		HashMap<String, List<String>> map= readData();
+		for (Map.Entry<String,List<String>> entry : map.entrySet())  {
+            System.out.println("Key = " + entry.getKey() + 
+                             ", Value = " + entry.getValue()); 
+           
+    } 
+	}
+}
