@@ -2,11 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.havasmedia.ui.automation</groupId>
-	<artifactId>hmas</artifactId>
+	<groupId>com.demo.jsonFormatter</groupId>
+	<artifactId>jsonConverter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UI Automation </name>
-	<description>Functional Test Automation Suite</description>
+	<name>backendDev</name>
+	<description>POC</description>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-cucumber4-adapter -->
