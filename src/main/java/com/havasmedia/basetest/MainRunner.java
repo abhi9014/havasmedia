@@ -11,9 +11,9 @@ public class MainRunner{
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		BaseConfigurationSetup instance = new BaseConfigurationSetup();
-		//HashMap<String, List<String>> hasMap = instance.readData();
 		instance.getMapEnity();
-		//instance.gsonMap(hasMap);
+		//HashMap<String, List<String>> hasMap = instance.readData();
+		//instance.gsonMap();
 	}
 
 }
