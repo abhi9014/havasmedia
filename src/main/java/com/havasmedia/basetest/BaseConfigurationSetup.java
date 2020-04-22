@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 public class BaseConfigurationSetup {
 	private static final String USER_DIRECTORY = System.getProperty("user.dir");
-	private static final String CONFIG_PROPERTIES = USER_DIRECTORY + "\\jsonFormatterFile";
+	private static final String CONFIG_PROPERTIES = USER_DIRECTORY + "/jsonFormatterFile";
 
 	private void gsonMap(HashMap<String, List<Map<String, List<String>>>> mapp, String fileName) {
 		FileWriter file;
